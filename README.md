@@ -1,9 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
-
-# make it a bit longer and also include emoji to make it more user friendly
-
-Certainly! Here's an extended and more user-friendly version of the README.md content for your "Car Information Chatbot" project, with emojis added to make it visually engaging and approachable:
-
 # 🚗 Car Information Chatbot 🤖
 
 **🚀 Overview**
