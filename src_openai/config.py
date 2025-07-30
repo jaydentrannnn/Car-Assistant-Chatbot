@@ -1,6 +1,7 @@
 import os
 import gradio as gr
 from rich.theme import Theme
+import getpass
 
 #SQLDATABASE
 TABLE_DEFINITION = """
@@ -27,7 +28,11 @@ DB_PATH = os.path.join(_BASE_DIR, "..", "data", "cars.db")
 
 #PIPELINE
 MODEL = "gpt-4.1-mini"
-GEMINI_API_KEY = "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"
+API_KEY= os.getenv("OPENAI_API_KEY")
+if not API_KEY:
+        print("💡 OpenAI API key not found.")
+        api_key = getpass.getpass("🔑 Please enter your OpenAI API key: ")
+
 MAX_TOKENS = 1024
 
 #SYSTEM MESSAGE
