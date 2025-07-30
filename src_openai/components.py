@@ -2,6 +2,8 @@ from typing import List
 from haystack import component
 import sqlite3
 import pandas as pd
+import os
+from dotenv import load_dotenv, set_key
 
 
 
@@ -58,3 +60,18 @@ class SQLQuery:
             results = ["No_matching_result_found"]
 
         return {"results": results, "queries": executed_queries}
+
+
+
+def get_or_set_api_key():
+    dotenv_path = '.env'
+    load_dotenv(dotenv_path=dotenv_path)
+    api_key = os.getenv("OPENAI_API_KEY")
+
+    if not api_key:
+        print("💡 OpenAI API key not found.")
+        api_key = input("🔑 Please enter your OpenAI API key: ")
+        set_key(dotenv_path, "OPENAI_API_KEY", api_key)
+        print("✅ API key saved to .env file for future use.")
+
+    return api_key

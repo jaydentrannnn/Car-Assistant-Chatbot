@@ -30,7 +30,7 @@ class ChatSearch:
         sql_query = SQLQuery(DB_PATH)
 
         # LLM
-        ans_generator = OpenAIChatGenerator(model=MODEL, api_key=Secret.from_token(GEMINI_API_KEY), generation_kwargs={"max_tokens": MAX_TOKENS})
+        ans_generator = OpenAIChatGenerator(model=MODEL, api_key=Secret.from_token(API_KEY), generation_kwargs={"max_tokens": MAX_TOKENS})
 
         # Prompt Builder
         ans_prompt_builder = ChatPromptBuilder(variables=["question", "sql_results", "memories", "table_definition"],

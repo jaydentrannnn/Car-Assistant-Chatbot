@@ -1,7 +1,7 @@
 import os
 import gradio as gr
 from rich.theme import Theme
-import getpass
+from dotenv import load_dotenv
 
 #SQLDATABASE
 TABLE_DEFINITION = """
@@ -28,11 +28,8 @@ DB_PATH = os.path.join(_BASE_DIR, "..", "data", "cars.db")
 
 #PIPELINE
 MODEL = "gpt-4.1-mini"
+load_dotenv()
 API_KEY= os.getenv("OPENAI_API_KEY")
-if not API_KEY:
-        print("💡 OpenAI API key not found.")
-        api_key = getpass.getpass("🔑 Please enter your OpenAI API key: ")
-
 MAX_TOKENS = 1024
 
 #SYSTEM MESSAGE
